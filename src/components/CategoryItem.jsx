@@ -1,14 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CategoryItemContainer from '../UI/Containers/CategoryItemContainer'
 
 function CategoryItem(props) {
+  console.log(props)
   return (
     <CategoryItemContainer>
-      <img className="img" src={props.img} alt="category" />
-      <div className='info'>
-      <h2 className='title'>{props.title}</h2>
-      <button className='btn'>Shop Now</button>
-      </div>
+      <Link to={`/products/${props.cat}`} style={{ display: 'flex' }}>
+        <img className="img" src={props.img} alt="category" />
+        <div className='info'>
+          <h2 className='title'>{props.title}</h2>
+          <button className='btn'>Shop Now</button>
+        </div>
+      </Link>
     </CategoryItemContainer>
   )
 }

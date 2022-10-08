@@ -6,8 +6,8 @@ import CategoryItem from './CategoryItem'
 function Categories() {
   return (
     <CategoriesContainer>
-      {categories.map(el=> (
-      <CategoryItem key={el.id} title={el.title} img={el.img_url}/>
+      {categories.map(el => (
+        <CategoryItem key={el.id} title={el.title} img={el.img_url} cat={el.cat} />
       ))}
     </CategoriesContainer>
   )

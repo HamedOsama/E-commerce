@@ -14,33 +14,40 @@ import Wrapper from '../UI/Wrapper'
 import SearchContainer from '../UI/Containers/SearchContainer';
 import SearchInput from '../UI/Inputs/SearchInput';
 import Logo from '../UI/Logo';
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
   const searchInputRef = useRef();
-  const focusSearchHandler = ()=>{
+  const focusSearchHandler = () => {
     searchInputRef.current.focus();
   }
-  const cart = useSelector(state=> state.cart.cartItemsLength);
+  const cart = useSelector(state => state.cart.cartItemsLength);
   return (
     <Container>
       <Wrapper>
         <Left>
           <SearchContainer onClick={focusSearchHandler}>
-            <SearchInput placeholder='Search' ref={searchInputRef}/>
-            <SearchIcon onClick={focusSearchHandler}/>
+            <SearchInput placeholder='Search' ref={searchInputRef} />
+            <SearchIcon onClick={focusSearchHandler} />
           </SearchContainer>
         </Left>
         <Center>
           <Logo>E-Commerce</Logo>
-          </Center>
+        </Center>
         <Right>
-          <MenuItem className='menu-item'>Login</MenuItem>
-          <MenuItem className='menu-item'>About</MenuItem>
-          <MenuItem className='menu-item'>Contact us</MenuItem>
+          <Link to="/" className='format'>
+            <MenuItem className='menu-item'>Home</MenuItem>
+          </Link>
+          <Link to="/products" className='format'>
+            <MenuItem className='menu-item'>Products</MenuItem>
+          </Link>
+          <Link to="/contact-us" className='format'>
+            <MenuItem className='menu-item'>Contact us</MenuItem>
+          </Link>
           <MenuItem className='menu-item'>
             <Badge badgeContent={cart} color='primary'>
-              <ShoppingCartOutlinedIcon/>
+              <ShoppingCartOutlinedIcon />
             </Badge>
           </MenuItem>
         </Right>

@@ -14,3 +14,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.format {
+  text-decoration: none;
+  color: #000;
+}

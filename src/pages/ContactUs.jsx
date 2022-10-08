@@ -23,8 +23,6 @@ const InfoContainer = styled.div`
   & .message {
     width: 97%;
     margin: 2rem 0;
-    /* padding: 0 1rem 0 0; */
-    /* height: 3rem ; */
   }
   & .message .MuiInputBase-input{
     height: 100px;
