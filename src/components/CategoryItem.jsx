@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import CategoryItemContainer from '../UI/Containers/CategoryItemContainer'
 
 function CategoryItem(props) {
-  console.log(props)
+  // console.log(props)
   return (
     <CategoryItemContainer>
       <Link to={`/products/${props.cat}`} style={{ display: 'flex', width: '100%' }}>

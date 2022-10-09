@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { Add, Remove } from '@mui/icons-material'
 import { useLocation, useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { BounceLoader } from 'react-spinners';
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -20,19 +22,30 @@ import AddContainer from '../UI/Containers/AddContainer'
 import AmountContainer from '../UI/Containers/AmountContainer'
 import Amount from '../UI/Product/Amount'
 import Button from '../UI/Button'
-
+import { cartActions } from '../features/Cart/cart-slice'
 // import { popularProducts as products } from '../data'
 import API_BASE_URL from '../api_route'
 import BackToProducts from '../components/BackToProducts'
+import Overlay from '../components/Overlay'
 
 const Product = () => {
   const location = useLocation();
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const productId = location.pathname.split("/")[2];
   const [product, setProduct] = useState();
   const [amount, setAmount] = useState(1);
   const [size, setSize] = useState('')
   const [color, setColor] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  const addToCartHandler = () => {
+    dispatch(cartActions.addToCart());
+  }
+  const setLoadingHandler = useCallback((state) => {
+    setIsLoading(state)
+  }, [])
   const changeColorHandler = (color) => {
     setColor(prev => color)
   }
@@ -48,13 +61,14 @@ const Product = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
+        setLoadingHandler(true)
         const req = await fetch(API_BASE_URL + '/product/find/' + productId)
         const product = await req.json()
         if (product?.ok === false) {
           history.push('/')
         }
         setProduct(product);
-        console.log(product);
+        setLoadingHandler(false);
       } catch (e) {
         console.log(e)
       }
@@ -62,12 +76,21 @@ const Product = () => {
     fetchProduct();
     // const product = products.find(el => el.id === +productId)
     // setProduct(prev => product);
-  }, [productId])
+  }, [productId, history, setLoadingHandler])
 
   return (
     <ProductContainer>
+      {isLoading && <Overlay />}
+      {isLoading
+        &&
+        <BounceLoader
+          color="#36d7b7"
+          speedMultiplier={1.5}
+          className="loader"
+        />
+      }
       <Navbar />
-      <Wrapper>
+      <Wrapper style={{ display: isLoading ? 'none' : 'flex' }}>
         <BackToProducts />
         <ImageContainer>
           <Image src={product?.img} alt='product' />
@@ -106,7 +129,7 @@ const Product = () => {
                   onChange={changeSizeHandler}
                 >
                   {product?.size?.map(el => (
-                    <MenuItem key={el} value={el}>{el?.toUpperCase()}</MenuItem>
+                    <MenuItem key={el} value={el}>{`${el}`?.toUpperCase()}</MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -118,7 +141,7 @@ const Product = () => {
               <Amount >{amount}</Amount>
               <Add style={{ cursor: 'pointer' }} onClick={increaseAmountHandler} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={addToCartHandler}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

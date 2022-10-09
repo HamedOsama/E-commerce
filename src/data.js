@@ -4,7 +4,7 @@ export const slides = [
     title: 'SUMMER SALES',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quos, sed provident perspiciatis, a placeat minus ab suscipit laudantium illo quam sapiente? Asperiores, eligendi molestiae dolores aspernatur, quia quod voluptatibus provident necessitatibus beatae magni recusandae quibusdam? Deserunt ipsum illo sed cupiditate optio impedit nam repellendus rem temporibus, placeat id iste.',
     description: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS",
-    img_url: "https://www.pngarts.com/files/2/Model-Transparent-Images.png",
+    img_url: "https://www.pngarts.com/files/2/Model-PNG-Picture-1.png",
     bg: "#f5fafd"
   },
   {

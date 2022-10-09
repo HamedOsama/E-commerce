@@ -99,14 +99,13 @@ const Image = styled.img`
   margin : 1rem 0;
   width: 100%;
 `
-
-const animationDuration = 2
+const animationDuration = 2.5
 const About = () => {
   const { ref, inView, entry } = useInView({
-    threshold: 0.75,
-    triggerOnce: true
+    threshold: 0.7,
+    triggerOnce: true,
+    rootMargin: '0px 0px 0px 0px'
   });
-  console.log(inView)
   return (
     <Container >
       <Navbar />

@@ -1,7 +1,7 @@
 import { MailOutline, Phone } from '@mui/icons-material';
 import { TextField } from '@mui/material';
 import Textarea from '@mui/joy/Textarea';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -11,6 +11,7 @@ import ContactItem from '../UI/Footer/ContactItem';
 import Title from '../UI/Title'
 import Button from '../UI/Button';
 import { small } from '../responsive';
+import API_BASE_URL from '../api_route';
 
 
 const InfoContainer = styled.div`
@@ -48,6 +49,40 @@ const Wrapper = styled.div`
 )}
 `
 const ContactUs = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const onChangeNameHandler = (e) => {
+    setName(prev => e.target.value)
+  }
+  const onChangeEmailHandler = (e) => {
+    setEmail(prev => e.target.value)
+  }
+  const onChangeMessageHandler = (e) => {
+    setMessage(prev => e.target.value)
+  }
+  const sendMessage = async () => {
+    try {
+      const req = await fetch(API_BASE_URL + "/contact", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        })
+      })
+      const res = await req.json()
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (e) {
+      console.log(e)
+    }
+
+  }
   return (
     <Container>
       <Navbar />
@@ -66,8 +101,24 @@ const ContactUs = () => {
           <SocialMedia />
         </InfoContainer>
         <InfoContainer>
-          <TextField id="name" label="Name" variant="outlined" className='up' required />
-          <TextField id="email" label="Email" variant="outlined" className='up' required />
+          <TextField
+            id="name"
+            value={name}
+            label="Name"
+            variant="outlined"
+            className='up'
+            onChange={onChangeNameHandler}
+            required
+          />
+          <TextField
+            id="email"
+            value={email}
+            label="Email"
+            variant="outlined"
+            className='up'
+            onChange={onChangeEmailHandler}
+            required
+          />
           <Textarea
             disabled={false}
             minRows={6}
@@ -75,8 +126,10 @@ const ContactUs = () => {
             id="Message"
             variant="outlined"
             className="message"
+            onChange={onChangeMessageHandler}
+            value={message}
           />
-          <Button>Send</Button>
+          <Button onClick={sendMessage}>Send</Button>
         </InfoContainer>
       </Wrapper>
       <Footer />

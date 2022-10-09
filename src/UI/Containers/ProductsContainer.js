@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { small } from "../../responsive";
 
 const ProductsContainer = styled.div`
-  display: flex;
+  /* display: ${props => props.isLoading ? 'none' : 'flex'}; */
+  display : flex;
   flex-wrap: wrap;
   padding: 1rem;
   ${small({ padding: 0 })}

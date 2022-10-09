@@ -3,7 +3,8 @@ import { useLocation } from 'react-router-dom'
 import API_BASE_URL from '../api_route'
 import ProductsContainer from '../UI/Containers/ProductsContainer'
 import ProductItem from './ProductItem'
-function ProductsList({ cat, sort }) {
+const emptyFunction = () => { }
+function ProductsList({ cat, sort, setLoading = emptyFunction, isLoading }) {
   const location = useLocation();
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -12,18 +13,20 @@ function ProductsList({ cat, sort }) {
       url = '/product/top'
     else url = `/product?category=${cat}`
     const fetchProducts = async () => {
+      setLoading(true)
       try {
         const req = await fetch(API_BASE_URL + url);
         const products = await req.json();
         if (products?.ok === false)
           return;
         setProducts(products)
+        setLoading(false)
       } catch (e) {
         console.log(e)
       }
     }
     fetchProducts()
-  }, [cat, location])
+  }, [cat, location, setLoading])
 
   useEffect(() => {
     if (sort === "newest") {
@@ -40,9 +43,9 @@ function ProductsList({ cat, sort }) {
       );
     }
   }, [cat, sort]);
-  console.log(products)
+  // console.log(products)
   return (
-    <ProductsContainer>
+    <ProductsContainer isLoading={isLoading}>
       {products?.map(el => {
         return <ProductItem img={el.img} key={el._id} id={el._id} />
       }

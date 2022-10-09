@@ -9,16 +9,16 @@ import SocialIcon from '../UI/SocialIcon'
 const SocialMedia = () => {
   return (
     <IconsContainer>
-      <SocialIcon>
+      <SocialIcon bg="#3B5999" href='' target="_blank">
         <FacebookRoundedIcon />
       </SocialIcon>
-      <SocialIcon>
+      <SocialIcon bg="#E4405F" href='https://instagram.com/hamed_prvv' target="_blank">
         <InstagramIcon />
       </SocialIcon>
-      <SocialIcon>
+      <SocialIcon bg="#0a66c2" href="https://www.linkedin.com/in/hamed-osama-70b838206/" target="_blank">
         <LinkedInIcon />
       </SocialIcon>
-      <SocialIcon>
+      <SocialIcon bg="#000" href="https://github.com/HamedOsama" target="_blank">
         <GitHubIcon />
       </SocialIcon>
     </IconsContainer>
