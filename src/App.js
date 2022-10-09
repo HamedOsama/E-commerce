@@ -24,6 +24,9 @@ function App() {
       <Route path="/contact-us">
         <ContactUs />
       </Route>
+      <Route path="*">
+        <Redirect to="/" />
+      </Route>
     </Switch>
   );
 }

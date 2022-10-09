@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -14,7 +15,6 @@ import Wrapper from '../UI/Wrapper'
 import SearchContainer from '../UI/Containers/SearchContainer';
 import SearchInput from '../UI/Inputs/SearchInput';
 import Logo from '../UI/Logo';
-import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -36,15 +36,15 @@ function Navbar() {
           <Logo>E-Commerce</Logo>
         </Center>
         <Right>
-          <Link to="/" className='format'>
-            <MenuItem className='menu-item'>Home</MenuItem>
-          </Link>
-          <Link to="/products" className='format'>
-            <MenuItem className='menu-item'>Products</MenuItem>
-          </Link>
-          <Link to="/contact-us" className='format'>
-            <MenuItem className='menu-item'>Contact us</MenuItem>
-          </Link>
+          <NavLink exact to="/" className='format menu-item' activeClassName='menu-item__active'>
+            <MenuItem >Home</MenuItem>
+          </NavLink>
+          <NavLink to="/products" className='format menu-item' activeClassName='menu-item__active'>
+            <MenuItem >Products</MenuItem>
+          </NavLink>
+          <NavLink to="/contact-us" className='format menu-item' activeClassName='menu-item__active'>
+            <MenuItem >Contact us</MenuItem>
+          </NavLink>
           <MenuItem className='menu-item'>
             <Badge badgeContent={cart} color='primary'>
               <ShoppingCartOutlinedIcon />

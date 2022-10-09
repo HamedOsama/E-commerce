@@ -6,7 +6,7 @@ function CategoryItem(props) {
   console.log(props)
   return (
     <CategoryItemContainer>
-      <Link to={`/products/${props.cat}`} style={{ display: 'flex' }}>
+      <Link to={`/products/${props.cat}`} style={{ display: 'flex', width: '100%' }}>
         <img className="img" src={props.img} alt="category" />
         <div className='info'>
           <h2 className='title'>{props.title}</h2>

@@ -32,7 +32,8 @@ export const ProductItemContainer = styled.div`
 .img{
   /* width: 100%; */
   height: 80%;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   z-index: 2;
 }
 `

@@ -48,33 +48,181 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    cat: 't-shirts'
   },
   {
     id: 2,
-    img: "https://i.pinimg.com/564x/13/8b/9a/138b9a972f01b02f4af5012a4ea0cc7e.jpg",
+    img: "https://www.pngarts.com/files/1/T-Shirt-Transparent-Background-PNG.png",
+    cat: 't-shirts'
   },
   {
     id: 3,
     img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+    cat: 't-shirts'
   },
   {
     id: 4,
     img: "https://i.pinimg.com/564x/80/eb/d1/80ebd11aef09e46eb1ff5b7c3d25cd95.jpg",
+    cat: 'jeans'
   },
   {
     id: 5,
     img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    cat: 'jeans'
   },
   {
     id: 6,
     img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    cat: 'jeans'
   },
   {
     id: 7,
     img: "https://i.pinimg.com/564x/93/b6/48/93b648385af54168409f7c638f9a5e31.jpg",
+    cat: 'hoodies'
   },
   {
     id: 8,
     img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 9,
+    img: "https://www.pngarts.com/files/9/Black-Hoodie-Pullover-PNG-Transparent-Photo.png",
+    cat: 'hoodies'
+  },
+  {
+    id: 10,
+    img: "https://www.pngarts.com/files/9/Black-Hoodie-Pullover-PNG-No-Background.png",
+    cat: 'hoodies'
+  },
+  {
+    id: 11,
+    img: "https://www.pngarts.com/files/17/Halloween-T-Shirt-PNG-HQ-Picture.png",
+    cat: 't-shirts'
+  },
+  {
+    id: 12,
+    img: "https://www.pngarts.com/files/11/Boys-Yellow-T-Shirt-PNG-Image-Background.png",
+    cat: 't-shirts'
+  },
+  {
+    id: 13,
+    img: "https://www.pngarts.com/files/3/Black-T-Shirt-Transparent-Images.png",
+    cat: 't-shirts'
+  },
+  {
+    id: 14,
+    img: "https://www.pngarts.com/files/1/Jacket-PNG-Pic.png",
+    cat: 'jackets'
+  },
+  {
+    id: 15,
+    img: "https://www.pngarts.com/files/1/Jacket-PNG-Download-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 16,
+    img: "https://www.pngarts.com/files/1/Blue-Jacket-PNG-Free-Download.png",
+    cat: 'jackets'
+  },
+  {
+    id: 17,
+    img: "https://www.pngarts.com/files/1/Ladies-Jacket-PNG-Photo.png",
+    cat: 'jackets'
+  },
+  {
+    id: 18,
+    img: "https://www.pngarts.com/files/1/Women-Leather-Jacket-PNG-Pic.png",
+    cat: 'jackets'
+  },
+  {
+    id: 19,
+    img: "https://www.pngarts.com/files/2/Pink-Jacket-For-Women-Transparent-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 20,
+    img: "https://www.pngarts.com/files/3/Hooded-Jacket-Men-PNG-Transparent-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 21,
+    img: "https://www.pngarts.com/files/3/Leather-Jacket-PNG-Transparent-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 22,
+    img: "https://www.pngarts.com/files/4/Bomber-Jacket-PNG-Image.png",
+    cat: 'jackets'
+  },
+  {
+    id: 23,
+    img: "https://www.pngarts.com/files/9/Black-Hoodie-Front-PNG-HD-Photo.png",
+    cat: 'hoodies'
+  },
+  {
+    id: 24,
+    img: "https://www.pngarts.com/files/4/Polo-Shirt-PNG-Image-Transparent.png",
+    cat: 't-shirts'
+  },
+  {
+    id: 25,
+    img: "https://www.pngarts.com/files/17/Halloween-T-Shirt-PNG-Photo-HQ.png",
+    cat: 't-shirts'
+  },
+  {
+    id: 26,
+    name: "Jogger Shoes",
+    img: "https://www.pngarts.com/files/2/Shoes-Download-PNG-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 27,
+    name: "Jogger Shoes",
+    img: "https://www.pngarts.com/files/1/Women-Casual-Shoes-PNG-Image-Background.png",
+    cat: 'shoes'
+  },
+  {
+    id: 28,
+    name: "Gucci Shoes",
+    img: "https://www.pngarts.com/files/2/Gucci-Shoes-For-Women-Transparent-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 29,
+    name: "Jogger Shoes",
+    img: "https://www.pngarts.com/files/3/Jogger-Shoes-PNG-Download-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 30,
+    name: "Nike Running Shoes",
+    img: "https://www.pngarts.com/files/3/Nike-Running-Shoes-Free-PNG-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 31,
+    name: "Adidas Running Shoes",
+    img: "https://www.pngarts.com/files/3/Adidas-Running-Shoes-PNG-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 32,
+    name: "Woman Running Shoes",
+    img: "https://www.pngarts.com/files/3/Women-Running-Shoes-Download-PNG-Image.png",
+    cat: 'shoes'
+  },
+
+  {
+    id: 34,
+    name: "Adidas Running Shoes",
+    img: "https://www.pngarts.com/files/5/Adidas-Shoes-PNG-Image.png",
+    cat: 'shoes'
+  },
+  {
+    id: 35,
+    name: "Air Force",
+    img: "https://www.pngarts.com/files/8/Air-Force-One-White-Nike-Shoes-PNG-Picture.png",
+    cat: 'shoes'
   },
 ]

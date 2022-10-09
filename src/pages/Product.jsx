@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { Add, Remove } from '@mui/icons-material'
+import { useLocation } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -12,22 +15,31 @@ import Description from '../UI/Product/Description'
 import Price from '../UI/Product/Price'
 import FiltersContainer from '../UI/Containers/FiltersContainer'
 import { Filter, FilterTitle } from '../UI/Filter'
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import FilterColor from '../UI/FilterColor'
 import AddContainer from '../UI/Containers/AddContainer'
 import AmountContainer from '../UI/Containers/AmountContainer'
 import Amount from '../UI/Product/Amount'
-import { Add, Remove } from '@mui/icons-material'
 import Button from '../UI/Button'
+
+import { popularProducts as products } from '../data'
 
 let age;
 const Product = () => {
+  const location = useLocation();
+  const productId = location.pathname.split("/")[2];
+  const [product, setProduct] = useState();
+  useEffect(() => {
+    const product = products.find(el => el.id === +productId)
+    setProduct(prev => product);
+  }, [productId])
+  console.log(product)
+
   return (
     <ProductContainer>
       <Navbar />
       <Wrapper>
         <ImageContainer>
-          <Image src="https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png" alt='product' />
+          <Image src={product?.img} alt='product' />
         </ImageContainer>
         <InfoContainer>
           <Title style={{ fontSize: 48 }}>Denim Jumpsuit</Title>

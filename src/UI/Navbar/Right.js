@@ -9,7 +9,12 @@ justify-content: center;
   position: relative;
   transition: 0.15s ease-in-out;
 }
-.menu-item::after{
+.menu-item__active{
+  background-color: rgba(0, 0, 0, 0.04)
+}
+.menu-item::after,
+.menu-item__active::after
+{
   content: '';
   position: absolute;
   width: 90%;
@@ -17,15 +22,16 @@ justify-content: center;
   background-color: #1976d2;
   bottom: 0;
   left: 5%;
-  transition: 0.15s ease-in-out;
-  
+  transition: 0.15s ease-in-out; 
 }
-.menu-item:hover::after{
+
+.menu-item:hover::after,
+.menu-item__active:after{
   height: 2px;
 }
-.menu-item:focus::after{
+/* .menu-item:focus::after{
   height: 2px;
-}
+} */
 .menu-item:hover{
   opacity: 0.9;
 }
