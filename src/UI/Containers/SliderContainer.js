@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { small } from "../../responsive";
 
 export const SliderContainer = styled.div`
   height: calc(100vh - 65px);
@@ -8,6 +9,7 @@ export const SliderContainer = styled.div`
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  ${small({ display: 'none' })}
 `
 export const SliderWrapper = styled.div`
   display: flex;

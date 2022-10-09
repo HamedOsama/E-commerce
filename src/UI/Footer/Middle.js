@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { small } from "../../responsive";
 
 export const Middle = styled.div`
 flex : 1;
@@ -7,6 +8,8 @@ flex : 1;
 /* justify-content: space-evenly; */
 /* flex-direction: column; */
 padding: 0 2rem;
+${small({ padding: 0, display: 'none' })}
+
 `
 export const List = styled.ul`
   list-style: none;

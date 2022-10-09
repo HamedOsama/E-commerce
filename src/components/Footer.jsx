@@ -4,7 +4,6 @@ import Container from '../UI/Footer/Container'
 import Left from '../UI/Footer/Left'
 import { Middle, List, ListItem } from '../UI/Footer/Middle'
 import Right from '../UI/Footer/Right'
-import Logo from '../UI/Logo'
 import Description from '../UI/Footer/Description';
 import { MailOutline, Phone } from '@mui/icons-material';
 import ContactItem from '../UI/Footer/ContactItem';
@@ -15,7 +14,7 @@ function Footer() {
   return (
     <Container>
       <Left>
-        <Logo style={{ textAlign: 'left' }}>E-Commerce</Logo>
+        <Title style={{ textAlign: 'left' }}>E-Commerce</Title>
         <Description>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam vero in asperiores, iste doloribus ipsa possimus tenetur ex unde sunt cum eum impedit rem nostrum iure, omnis voluptatum quia natus quisquam recusandae ipsum quam? Aperiam pariatur aliquid earum iusto quaerat repellat sit qui eum unde quibusdam, vel reprehenderit dolorem ipsa.
         </Description>

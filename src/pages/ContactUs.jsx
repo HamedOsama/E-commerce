@@ -10,12 +10,19 @@ import Container from '../UI/Containers/Container'
 import ContactItem from '../UI/Footer/ContactItem';
 import Title from '../UI/Title'
 import Button from '../UI/Button';
+import { small } from '../responsive';
 
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 3rem 2rem;
   margin: 5rem 0;
+  ${small(
+  {
+    margin: 0,
+    padding: '2rem 1rem'
+  }
+)}
   & .up{
     width: calc(50% - 1rem);
     margin: 0 1rem 0 0;
@@ -31,6 +38,14 @@ const InfoContainer = styled.div`
 const Wrapper = styled.div`
   display: flex;
   gap: 3rem;
+  ${small(
+  {
+    flexDirection: 'column',
+    alignItem: 'center',
+    justifyContent: 'center',
+    gap: 0
+  }
+)}
 `
 const ContactUs = () => {
   return (

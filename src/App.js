@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import About from './pages/About';
 
 import ContactUs from './pages/ContactUs';
 import Home from './pages/Home';
@@ -23,6 +24,9 @@ function App() {
       </Route>
       <Route path="/contact-us">
         <ContactUs />
+      </Route>
+      <Route path="/about">
+        <About />
       </Route>
       <Route path="*">
         <Redirect to="/" />

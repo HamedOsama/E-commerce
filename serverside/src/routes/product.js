@@ -11,11 +11,12 @@ const router = require("express").Router();
 
 router.post("/", async (req, res) => {
   const newProduct = new Product(req.body);
-
+  console.log(req.body)
   try {
     const savedProduct = await newProduct.save();
     res.status(200).json(savedProduct);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -50,9 +51,17 @@ router.delete("/:id", async (req, res) => {
 router.get("/find/:id", async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(500).json({
+        ok: false,
+      });
+    }
     res.status(200).json(product);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({
+      ok: false,
+      err
+    });
   }
 });
 
@@ -62,25 +71,33 @@ router.get("/", async (req, res) => {
   const qCategory = req.query.category;
   try {
     let products;
-
     if (qNew) {
-      products = await Product.find().sort({ createdAt: -1 }).limit(1);
+      products = await Product.find().sort({ createdAt: -1 });
     } else if (qCategory) {
-      products = await Product.find({
-        categories: {
-          $in: [qCategory],
-        },
-      });
+      products = await Product.find({ category: qCategory });
     } else {
       products = await Product.find();
     }
 
     res.status(200).json(products);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
+router.get('/top', async (req, res) => {
+  try {
+    const products = await Product.find().limit(10);
+    res.status(200).json(products);
+  } catch (e) {
+    res.status(500).json({
+      ok: false,
+      e
+    });
+  }
+
+})
 module.exports = router;
 
 

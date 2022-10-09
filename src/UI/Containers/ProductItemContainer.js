@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { small } from "../../responsive";
 
 
 export const Info = styled.div`
@@ -29,6 +30,7 @@ export const ProductItemContainer = styled.div`
   &:hover ${Info}{
     opacity: 1;
   }
+  ${small({ minWidth: '140px' })}
 .img{
   /* width: 100%; */
   height: 80%;
@@ -59,4 +61,5 @@ export const Circle = styled.div`
   border-radius: 50%;
   position: absolute;
   background-color: #fff;
+  ${small({ width: 170, height: 170 })}
 `

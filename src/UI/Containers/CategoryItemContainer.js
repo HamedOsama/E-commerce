@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { small } from "../../responsive";
 
 const CategoryItemContainer = styled.div`
   flex: 1;
   display: flex;
   position: relative;
   height: 70vh;
+  ${small({ maxHeight: '60vh' })}
   .info{
     position: absolute;
     width : 100%;

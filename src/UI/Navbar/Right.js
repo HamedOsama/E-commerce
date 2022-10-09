@@ -35,6 +35,16 @@ justify-content: center;
 .menu-item:hover{
   opacity: 0.9;
 }
+@media (max-width : 678px) {
+  .menu__item__mui{
+    padding: 1rem 0.25rem;
+  }
+}
+@media (max-width : 576px) {
+  .menu__item__mui{
+    font-size: 0.75rem;
+  }
+}
 `
 
 export default Right;

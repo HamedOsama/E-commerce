@@ -7,6 +7,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
   color : #000;
   height: 100%;
+  @media (max-width : 678px) {
+    padding: 0;
+  }
 `
 
 export default Wrapper;

@@ -27,7 +27,6 @@ function ProductItem(props) {
             <SearchOutlinedIcon />
           </Icon>
         </Link>
-
         <Icon>
           <FavoriteBorderOutlinedIcon />
         </Icon>

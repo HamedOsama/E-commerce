@@ -37,15 +37,18 @@ function Navbar() {
         </Center>
         <Right>
           <NavLink exact to="/" className='format menu-item' activeClassName='menu-item__active'>
-            <MenuItem >Home</MenuItem>
+            <MenuItem className='menu__item__mui'>Home</MenuItem>
           </NavLink>
           <NavLink to="/products" className='format menu-item' activeClassName='menu-item__active'>
-            <MenuItem >Products</MenuItem>
+            <MenuItem className='menu__item__mui'>Products</MenuItem>
+          </NavLink>
+          <NavLink to="/about" className='format menu-item' activeClassName='menu-item__active'>
+            <MenuItem className='menu__item__mui'>About</MenuItem>
           </NavLink>
           <NavLink to="/contact-us" className='format menu-item' activeClassName='menu-item__active'>
-            <MenuItem >Contact us</MenuItem>
+            <MenuItem className='menu__item__mui'>Contact us</MenuItem>
           </NavLink>
-          <MenuItem className='menu-item'>
+          <MenuItem className='menu-item menu__item__mui'>
             <Badge badgeContent={cart} color='primary'>
               <ShoppingCartOutlinedIcon />
             </Badge>

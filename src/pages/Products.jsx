@@ -16,16 +16,18 @@ const Products = () => {
   let cat;
   if (location?.pathname?.split('/')?.length > 2)
     cat = location?.pathname?.split('/')[2]
-  const [category, setCategory] = useState(cat || 'All Products')
+  const [category, setCategory] = useState(cat || '')
   const [sort, setSort] = useState('newest')
   const changeCategoryHandler = (e) => {
     setCategory(prev => e.target.value)
+    setSort(prev => 'newest')
     history.push(`/products/${e.target.value}`)
   }
   const changeSortHandler = (e) => {
     setSort(prev => e.target.value)
   }
   const formatTitle = (text) => {
+    console.log(text)
     let newForm = text;
     newForm = newForm.split("");
     newForm[0] = newForm[0].toUpperCase();
@@ -35,7 +37,7 @@ const Products = () => {
   return (
     <Container>
       <Navbar />
-      <Title style={{ margin: '1.5rem' }}>{formatTitle(category)}</Title>
+      <Title style={{ margin: '1.5rem' }}>{formatTitle(category || "All Products")}</Title>
       <FiltersContainer>
         <Filter>
           <FilterTitle>Filter Products:</FilterTitle>
@@ -49,10 +51,9 @@ const Products = () => {
               label="Choose Category"
               onChange={changeCategoryHandler}
             >
-              <MenuItem value="All Products">All Products</MenuItem>
+              <MenuItem value="">All Products</MenuItem>
               <MenuItem value="hoodies">Hoodies</MenuItem>
               <MenuItem value="t-shirts">T-shirts</MenuItem>
-              <MenuItem value="jeans">Jeans</MenuItem>
               <MenuItem value="jackets">Jackets</MenuItem>
               <MenuItem value="shoes">Shoes</MenuItem>
             </Select>
@@ -71,8 +72,8 @@ const Products = () => {
               onChange={changeSortHandler}
             >
               <MenuItem value="newest">Newest</MenuItem>
-              <MenuItem value="price(asc)">Price(ASC)</MenuItem>
-              <MenuItem value="price(des)">Price(DES)</MenuItem>
+              <MenuItem value="asc">Price(ASC)</MenuItem>
+              <MenuItem value="des">Price(DES)</MenuItem>
             </Select>
           </FormControl>
         </Filter>
