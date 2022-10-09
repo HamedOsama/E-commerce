@@ -1,3 +1,3 @@
-const API_BASE_URL = 'http://127.0.0.1:1921/api/v1'
+const API_BASE_URL = 'https://e-commerce-server-production.up.railway.app/api/v1'
 
 export default API_BASE_URL;
